@@ -20,8 +20,7 @@ export class RQMColorLogger implements LoggerService {
 		const msg = Buffer.isBuffer(message) ? message.toString() : JSON.stringify(message);
 		const action = context.split(',')[0];
 		const topic = context.split(',')[1];
-		Logger.log(`${blueBright(action)} [${yellow(topic)}] ${white(msg)}`);
-		console.warn(`${blueBright(action)} [${yellow(topic)}] ${white(msg)}`);
+		Logger.debug(`${blueBright(action)} [${yellow(topic)}] ${white(msg)}`);
 	}
 	warn(message: any, context?: string): any {
 		Logger.warn(message, context);
